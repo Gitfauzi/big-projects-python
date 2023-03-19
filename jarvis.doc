@@ -1,0 +1,19 @@
+.import datetime  -- for importing the time so that the jarvis can tell us the current time
+
+import pyttsx3  # its a module used to convert words in voice using sapi5 for windows
+
+engine = pyttsx3.init('sapi5') -- here a variable name engine is used to define pyttsx3 (a module, downloaded using pip install pyttsx3, to convert text to speech),   pyttsx3.init() is way to use it and it has sapi5 in itself which is used for windows for the above stated purpose.
+
+voices = engine.getProperty('voices')
+voices is variable name, telling property(using get property) of engine variable
+get property():  get_property method is used in Selenium python. get_property method is used to get properties of an element, such as getting text_length property of anchor tag.
+now by printing voices print(voices) -- you can see the voices in your system 
+print(voices[0].id) -- here 0 is for the male voice and 1 stand for female voice.
+
+engine.setProperty('voice', voices[0].id) -- this helps you to set the voice as male voice.
+
+def speak(audio): -- here we define a function speak  with parameter as audio.
+engine.say(audio)  -- below
+engine.runAndWait() -- pyttsx3.init, say(), and runAndWait() are used to convert text into speech.
+
+
